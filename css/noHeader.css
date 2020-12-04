@@ -1,0 +1,5 @@
+/* Content in header weglaten */
+
+.header > .headerContent{
+    display: none;
+}

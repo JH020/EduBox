@@ -1,1 +1,5 @@
 <!-- Footer -->
+
+<div class="footer">
+
+</div>
