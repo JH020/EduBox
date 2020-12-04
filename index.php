@@ -12,5 +12,12 @@
     </head>
     <body>
         <?php include('inc/header.php'); ?>
+
+        <!-- Content pagina -->
+        <div class="pageContent">
+
+        </div>
+
+        <?php include('inc/footer.php'); ?>
     </body>
 </html>

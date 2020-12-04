@@ -42,3 +42,8 @@ li{
 li > a{
     font-weight: bold;
 }
+
+.pageContent{
+    width: var(--contentWidth);
+    margin: 0 auto;
+}
