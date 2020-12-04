@@ -1,1 +1,9 @@
 /* Footer */
+
+.footer{
+    width: 100%;
+    height: 2vh;
+    background: #1b2c43;
+    position: absolute;
+    bottom: 0;
+}
