@@ -7,7 +7,7 @@
         <!-- Pagina informatie -->
         <title>Template pagina</title>
         <meta name="description" content="Template voor groepsleden"/>
-        <link rel="stylesheet" href="../css/template.css">
+        <link rel="stylesheet" href="css/template.css">
 
     </head>
     <body>
