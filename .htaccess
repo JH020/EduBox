@@ -15,6 +15,6 @@ RewriteRule ^(.*)$ pages/$1 [QSA,L]
 RewriteRule ^index home [L]
 
 ## Wanneer webserver een 404 of een andere fout maakt naar pagina redirecten
-ErrorDocument 500 '<html><script>window.location.href = "home";</script></html>'
-ErrorDocument 404 '<html><script>window.location.href = "home";</script></html>'
-ErrorDocument 403 '<html><script>window.location.href = "home";</script></html>'
+ErrorDocument 500 '<html><script>history.go(-1);</script></html>'
+ErrorDocument 404 '<html><script>history.go(-1);</script></html>'
+ErrorDocument 403 '<html><script>history.go(-1);</script></html>'
