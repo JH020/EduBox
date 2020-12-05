@@ -7,7 +7,7 @@
         <!-- Pagina informatie -->
         <title>Home</title>
         <meta name="description" content="Homepagina EduBox"/>
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/home.css">
 
     </head>
     <body>

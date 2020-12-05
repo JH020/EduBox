@@ -6,4 +6,5 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/responsive.css">
+<?php include('config.php'); ?>
 <?php include('functions.php'); ?>
