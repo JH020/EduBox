@@ -2,7 +2,7 @@
 
 <div class="header">
     <div class="navBar">
-        <a href="index" class="logo"></a>
+        <a href="home" class="logo"></a>
         <div class="nav">
             <a href="home">Home</a>
             <a href="#">Alle video's</a>
