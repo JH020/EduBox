@@ -9,7 +9,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.*)$ pages/$1 [QSA,L]
+RewriteRule ^index home [L]
 
-ErrorDocument 500 '<html><script>window.location.href = "index";</script></html>'
-ErrorDocument 404 '<html><script>window.location.href = "index";</script></html>'
-ErrorDocument 403 '<html><script>window.location.href = "index";</script></html>'
+ErrorDocument 500 '<html><script>window.location.href = "home";</script></html>'
+ErrorDocument 404 '<html><script>window.location.href = "home";</script></html>'
+ErrorDocument 403 '<html><script>window.location.href = "home";</script></html>'

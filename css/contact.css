@@ -10,4 +10,36 @@
 
 #contactFormulier{
     width: 100%;
+    padding: 15px 15px 15px 0px;
+}
+
+input[type=text],
+input[type=email],
+textarea
+{
+    padding: 15px 10px;
+    width: calc(100% - 25px);
+    margin: 10px 0px;
+    background: none;
+    border: 1px solid white;
+}
+
+input:focus{
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type=submit]{
+    width: 50%;
+    margin: 0 auto;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: white;
+}
+
+input, textarea{
+    color: white;
 }
