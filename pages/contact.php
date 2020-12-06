@@ -57,7 +57,7 @@
 
         <!-- Content pagina -->
         <div class="pageContent">
-            <form method="POST" ation="<?php echo $_SERVER['REQUEST_URI']; ?>" id="contactFormulier">
+            <form method="POST" ation="<?php echo $_SERVER['REQUEST_URI']; ?>" id="contactFormulier" autocomplete="off">
             <h1>Neem contact op</h1><br>
             <input type="text" name="naam" placeholder="Naam" required><br>
             <input type="email" name="email" placeholder="E-mailadres" required><br>
