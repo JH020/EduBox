@@ -25,7 +25,10 @@
 
         <!-- Content pagina -->
         <div class="pageContent">
+            <?php
 
+
+            ?>
         </div>
 
         <?php include('../inc/footer.php'); ?>

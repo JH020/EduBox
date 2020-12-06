@@ -54,7 +54,7 @@
                     }
 
                     //Bijlage validatie
-                    if(!empty($_POST['attachment'])){
+                    if(isset($_FILES['attachment'])){
                         //Controle juiste soort bijlage
                         if(isAttachment("attachment")){
                             //Juiste soort
@@ -64,13 +64,13 @@
                             //Onjuiste soort (niet opslaan bijlage)
                             $attachment = NULL;
                             $attachmentType = NULL;
-                            array_push($invoerError, "Bijlage is niet in het juiste bestandsformaat en is niet opgeslagen.");
+                            array_push($invoerError, "Bijlage is niet in het juiste bestandsformaat geüpload.");
                         }
                     } else{
                         //Geen bijlage
                         $attachment = NULL;
                         $attachmentType = NULL;
-                        array_push($invoerError, "Een bijlage is niet meegestuurd of niet in het juiste bestandsformaat.");
+                        array_push($invoerError, "Geen bijlage");
                     }
 
                     //Likes validatie
@@ -109,7 +109,7 @@
 
                     // Query voorbereiden [video] 12 
                     $stmt = $conn->prepare("INSERT INTO video (VideoID, Title, UserID, EducationID, VideoFile, VideoType, Description, Thumbnail, ThumbnailType, Attachment, AttachmentType, Vote) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    $stmt->bind_param("sssssssssssb", $VideoID, $titel, $UserID, $EducationID, $VideoFile, $VideoType, $beschrijving, $thumbnailImage, $thumbnailType, $attachment, $attachmentType, $likes);
+                    $stmt->bind_param("ssssssssssss", $VideoID, $titel, $UserID, $EducationID, $VideoFile, $VideoType, $beschrijving, $thumbnailImage, $thumbnailType, $attachment, $attachmentType, $likes);
                     
                     // Query uitvoeren [video]
                     if ($stmt->execute()) { 
