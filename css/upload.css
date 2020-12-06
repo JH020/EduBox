@@ -83,3 +83,12 @@ label{
 .error{
     color: red;
 }
+
+#checkboxP{
+    width: auto;
+    display: inline-block;
+    font-size: .8em !important;
+    font-weight: normal !important;
+    font-style: italic;
+    margin-left: 10px;
+}

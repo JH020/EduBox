@@ -129,4 +129,74 @@ function videoID(){
     return $videoID;
 }
 
+function selectData($sql){
+
+    //Selectie Connectie maken
+    $selectConn = new mysqli(HOST, DBUSER, DBPWD, DATABASE);
+    if ($selectConn->connect_error) {
+        die("Connectie mislukt: " . $selectConn->connect_error);
+    }
+
+    //SQL die is meegegeven aan connectie meegeven en uitvoeren
+    $selectData = $selectConn->prepare($sql);
+    $selectData->execute();
+
+    //Resultaat ophalen
+    $selectResult = $selectData->get_result();
+
+    //Connecties sluiten
+    $selectData->close();
+    $selectConn->close();
+
+    //Resultaat teruggeven
+    return $selectResult;
+
+}
+
+function videoData($file){
+
+    //Metadata array
+    $videoMeta = array();
+
+    //Include library getid3
+    include_once('library/getid3/getid3.php');
+    $getID3 = new getID3();
+    
+    //Scan bestand ($file moet pad bevatten van video)
+    $fileInfo = $getID3->analyze($file);
+
+    if(isset($fileInfo)){
+        $videoMeta['resolutieX'] = $fileInfo['video']['resolution_x'];
+        $videoMeta['resolutieY'] = $fileInfo['video']['resolution_y'];
+        $videoMeta['videoLength'] = $fileInfo['playtime_string'];
+    }
+
+    return $videoMeta;
+}
+
+
+function getOpleidingen($UserID){
+    //Verbinding met database maken en valideren [eduction]
+    $interesses = array();
+    $conn = new mysqli(HOST, DBUSER, DBPWD, DATABASE);
+    if ($conn->connect_error) {
+        die("Connectie mislukt: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM user_education WHERE UserID=?";
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("s", $UserID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        array_push($interesses, $row['EducationID']);
+    }
+
+    
+    $conn->close();
+    $stmt->close();
+
+    return $interesses;
+}
+
 ?>
