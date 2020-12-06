@@ -8,6 +8,7 @@
         <title>Template pagina</title>
         <meta name="description" content="Template voor groepsleden"/>
         <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="css/noHeader.css"> <!-- Header content verdwijnen -->
 
     </head>
     <body>

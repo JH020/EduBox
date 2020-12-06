@@ -18,6 +18,7 @@ html, body{
     overflow-x: hidden;
     background: var(--dark-color);
     position: relative;
+    color: white;
 }
 
 body{
