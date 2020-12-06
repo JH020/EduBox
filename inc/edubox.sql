@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2020 at 08:51 PM
+-- Generation Time: Dec 06, 2020 at 07:33 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -33,6 +33,13 @@ CREATE TABLE `eduction` (
   `Year` int(11) NOT NULL,
   `SchoolID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `eduction`
+--
+
+INSERT INTO `eduction` (`EductionID`, `EductionName`, `Year`, `SchoolID`) VALUES
+(1, 'Informatica', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -73,6 +80,13 @@ CREATE TABLE `school` (
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `school`
+--
+
+INSERT INTO `school` (`SchoolID`, `SchoolName`, `Extention`, `created`) VALUES
+(1, 'NHL Stenden', 'student.nhlstenden.com', '2020-12-06 04:52:56');
+
 -- --------------------------------------------------------
 
 --
@@ -107,6 +121,13 @@ CREATE TABLE `user` (
   `Created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`UserID`, `Username`, `Password`, `FirstName`, `LastName`, `Email`, `StudentID`, `VerificationKey`, `Role`, `SchoolID`, `Lang`, `LastLogin`, `Created`) VALUES
+('abcdefgh', 'feike', 'test', 'Feike', 'Falkena', 'feike@feikefalkena.nl', 123445, NULL, 'docent', 1, 'dutch', NULL, '2020-12-06 05:53:46');
+
 -- --------------------------------------------------------
 
 --
@@ -118,6 +139,13 @@ CREATE TABLE `user_eduction` (
   `UserID` varchar(8) NOT NULL,
   `EductionID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_eduction`
+--
+
+INSERT INTO `user_eduction` (`UserEductionID`, `UserID`, `EductionID`) VALUES
+(1, 'abcdefgh', 1);
 
 -- --------------------------------------------------------
 
@@ -242,7 +270,7 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT for table `eduction`
 --
 ALTER TABLE `eduction`
-  MODIFY `EductionID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `EductionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `history`
@@ -260,19 +288,19 @@ ALTER TABLE `mylist`
 -- AUTO_INCREMENT for table `school`
 --
 ALTER TABLE `school`
-  MODIFY `SchoolID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SchoolID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `user_eduction`
 --
 ALTER TABLE `user_eduction`
-  MODIFY `UserEductionID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserEductionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `vote`

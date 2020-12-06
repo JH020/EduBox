@@ -14,10 +14,18 @@
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
+
                     <a href="#">Mijn profiel</a>
+
                     <a href="#">Geschiedenis</a>
+                    
                     <a href="#">Gelikte video's</a>
+
+                    <!-- Alleen voor docenten -->
+                    <a href="#">Videobeheer</a>
+
                     <a href="#">Uitloggen</a>
+                    
                 </div>
             </div>
         </div>
