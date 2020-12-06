@@ -199,4 +199,67 @@ function getOpleidingen($UserID){
     return $interesses;
 }
 
+function downloadAttachment($VideoID){
+    $data = selectData("SELECT Title, Attachment, AttachmentType FROM video WHERE VideoID='$VideoID'")->fetch_assoc();
+
+    //Soort bijlage
+    $type = $data['AttachmentType'];
+    if($type = "application/x-zip-compressed"){
+        $extention = ".zip";
+    } 
+
+    if($type = "application/pdf"){
+        $extention = ".pdf";
+    } 
+
+    //Bijlage decoderen
+    $fileContent = base64_decode($data['Attachment']);
+
+    if(empty($fileContent)){
+        header('Location: home');
+    } else{
+        $fileName = $data['Title'].$extention;
+        
+        //Headers instellen
+        header("Content-type: ".$data['AttachmentType']);
+        header("Content-Disposition: attachment; ".$fileName);
+
+        //Bijlage downloaden
+        print $fileContent;
+        exit(); 
+    }
+    
+}
+
+function downloadThumbnail($VideoID){
+    $data = selectData("SELECT Title, Thumbnail, ThumbnailType FROM video WHERE VideoID='$VideoID'")->fetch_assoc();
+
+    //Soort bijlage
+    $type = $data['ThumbnailType'];
+    if($type = "image/png"){
+        $extention = ".png";
+    } 
+
+    if($type = "image/jpg"){
+        $extention = ".jpg";
+    } 
+
+    //Bijlage decoderen
+    $fileContent = base64_decode($data['Thumbnail']);
+
+    if(empty($fileContent)){
+        header('Location: home');
+    } else { 
+        $fileName = $data['Title'].$extention;
+        
+        //Headers instellen
+        header("Content-type: ".$data['ThumbnailType']);
+        header("Content-Disposition: attachment; ".$fileName);
+
+        //Bijlage downloaden
+        print $fileContent;
+    exit(); 
+    }
+}
+
 ?>
