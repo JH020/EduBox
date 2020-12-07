@@ -1,3 +1,13 @@
+<?php
+// sessie beginnen
+session_start();
+ 
+// Controlleer als de gebruiker is ingelogd, anders naar de login pagina
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
