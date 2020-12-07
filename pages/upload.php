@@ -185,11 +185,11 @@
                     $conn->close();
 
                     if(!isset($error)){                        
-                        //header("Location: home");
+                        header("Location: home");
                     }
 
                     if(!isset($invoerError)){                        
-                        //header("Location: home");
+                        header("Location: home");
                     }
 
                 } else{
@@ -221,7 +221,7 @@
                         }
                     ?>
 
-                    <br>
+                    
 
                     <label for="title"><p>Titel</p></label>
                     <input type="text" id="title" name="title" placeholder="Titel" required>
