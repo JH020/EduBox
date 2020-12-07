@@ -27,7 +27,7 @@
             include('config.php');
 
             //Verbinding met database maken en valideren
-            $conn = new mysqli(HOST, DBUSER, DBPWD);
+            $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD);
             if ($conn->connect_error) {
             die("Connectie mislukt: " . $conn->connect_error);
             }
@@ -38,7 +38,7 @@
             $stmt->close();
 
             //Tabellen importeren vanuit edubox.sql
-            $db = new PDO("mysql:host=".HOST.";dbname=edubox", DBUSER, DBPWD);
+            $db = new PDO("mysql:host=".DB_SERVER.";dbname=edubox", DB_USERNAME, DB_PASSWORD);
             $query = file_get_contents("edubox.sql");
             $stmt = $db->prepare($query);
             if ($stmt->execute()){
