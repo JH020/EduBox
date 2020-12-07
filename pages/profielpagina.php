@@ -40,16 +40,16 @@
 					</select></p> 
 				<p><label for="typeCourse">Subject area</label> 
 					<select name=”userSubjectArea”>
-						<option value=”associatesDegree”>Bestuur en Recht</option> 
-						<option value=”bachelors”>Communicatie en media</option> 
-						<option value=”mastersDegree”>Economie en Management</option> 
-						<option value=”associatesDegree”>Hotelmanagement</option> 
-						<option value=”bachelors”>ICT</option> 
-						<option value=”mastersDegree”>Maritiem</option> 
-						<option value=”associatesDegree”>Onderwijs</option> 
-						<option value=”bachelors”>Techniek</option> 
-						<option value=”mastersDegree”>Toerisme en vrije tijd</option> 
-						<option value=”mastersDegree”>Zorg en Welzijn </option> 
+						<option value=”bestuurEnRecht”>Bestuur en Recht</option> 
+						<option value=”CommunicatieEnMedia”>Communicatie en media</option> 
+						<option value=”economieEnManagement”>Economie en Management</option> 
+						<option value=”hotelmanagement”>Hotelmanagement</option> 
+						<option value=”ict”>ICT</option> 
+						<option value=”maritiem”>Maritiem</option> 
+						<option value=”onderwijs”>Onderwijs</option> 
+						<option value=”techniek”>Techniek</option> 
+						<option value=”toerismeEnVrijeTijd”>Toerisme en vrije tijd</option> 
+						<option value=”zorgEnWelzijn”>Zorg en Welzijn </option> 
 					</select></p> 
         </div>
 		
