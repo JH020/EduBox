@@ -17,11 +17,12 @@
 
         <!--main content-->
         <div class="pageContent">
+			<H1>Profielgegevens</H1
 			<!--formulier voor schoolkeuze, studierichting, opleiding etc, -->
             <form> 
-				<p><label for="firstName">First name:</label> 
+				<p><label for="firstName">Voornaam:</label> 
 				<input type="text" name="userFirstName"></p> 
-				<p><label for="lastName">Sir name:</label> 
+				<p><label for="lastName">Achternaam:</label> 
 				<input type="text" name="userLastName"></p> 
 				<p><label for="nameSchool">School:</label> 
 					<select name=”userSchool”> 
@@ -38,10 +39,10 @@
 						<option value=”terschelling”>Terschelling</option> 
 						<option value=”zwolle”>Zwolle</option>
 					</select></p> 
-				<p><label for="typeCourse">Subject area</label> 
+				<p><label for="typeCourse">Interesse gebied:</label> 
 					<select name=”userSubjectArea”>
 						<option value=”bestuurEnRecht”>Bestuur en Recht</option> 
-						<option value=”CommunicatieEnMedia”>Communicatie en media</option> 
+						<option value=”communicatieEnMedia”>Communicatie en media</option> 
 						<option value=”economieEnManagement”>Economie en Management</option> 
 						<option value=”hotelmanagement”>Hotelmanagement</option> 
 						<option value=”ict”>ICT</option> 
@@ -51,6 +52,11 @@
 						<option value=”toerismeEnVrijeTijd”>Toerisme en vrije tijd</option> 
 						<option value=”zorgEnWelzijn”>Zorg en Welzijn </option> 
 					</select></p> 
+				<p><label for="course">Opleiding:</label> 
+					<select name=”userCourse”>
+					
+					<!--php regelen...met dependant dropdown php/html/mysqli
+					type opleiding (bijv Bachelor)--> 
         </div>
 		
 		<!--footer-->
