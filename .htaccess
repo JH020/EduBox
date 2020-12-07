@@ -1,15 +1,20 @@
 RewriteEngine On
 
+## Weghalen .php extentie
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L] 
 
+## /pages/ url herschrijven
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
-
 RewriteRule ^(.*)$ pages/$1 [QSA,L]
 
-ErrorDocument 500 '<html><script>window.location.href = "index";</script></html>'
-ErrorDocument 404 '<html><script>window.location.href = "index";</script></html>'
-ErrorDocument 403 '<html><script>window.location.href = "index";</script></html>'
+## index pagina naar /pages/home.php verwijzen
+RewriteRule ^index home [L]
+
+## Wanneer webserver een 404 of een andere fout maakt naar pagina redirecten
+ErrorDocument 500 '<html><script>history.go(-1);</script></html>'
+ErrorDocument 404 '<html><script>history.go(-1);</script></html>'
+ErrorDocument 403 '<html><script>history.go(-1);</script></html>'

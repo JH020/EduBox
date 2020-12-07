@@ -5,6 +5,11 @@
     --contentWidth: 70%;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 html, body{
     margin: 0;
     font-family: sans-serif;
@@ -13,6 +18,7 @@ html, body{
     overflow-x: hidden;
     background: var(--dark-color);
     position: relative;
+    color: white;
 }
 
 body{
