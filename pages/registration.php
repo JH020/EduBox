@@ -48,6 +48,35 @@ if(empty(trim($_POST["password"]))){
 } else{
     $password = trim($_POST["password"]);
 }
+//hier moet ik controlleren op email stenden
+$msg = "Er ging iets fout";
+$email = $_POST["username"];
+$password = $_POST["password"];
+if(!empty($email) && !empty($password)) {
+    $stringB = $email;
+    $find = "nhlstenden.com";
+    $resultaat = strchr($stringB,$find);  
+    if (strpos($resultaat, "nhlstenden.com") === FALSE) {
+        $acces = FALSE;
+    }
+    else {
+        $acces = TRUE;
+        $msg = "";
+    }
+    if ($acces === FALSE){
+        $msg = "U heeft geen toegang tot dit platform zonder gebruik van een NHL Stenden account.";
+    }
+    else {
+        $stringA = $email; 
+        $toFind = "@";
+        $result = strchr($stringA,$toFind);
+        if(strpos($result, "student") === FALSE){
+            $level = "docent";
+    }
+    else {
+        $level = "student";
+    } 
+
 //valideren van accepteren wachtwoord
 if(empty(trim($_POST["confirm_password"]))){
     $confirm_password_err = "Graag het wachtwoord bevestigen.";     
