@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // verwijzen config
-require_once "config.php";
+require_once "../inc/config.php";
  
 // nieuwe lege variabelen defineren
 $username = $password = "";
@@ -117,7 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Heeft u nog geen account? <a href="register.php">regristreer nu!</a>.</p>
+            <p>Heeft u nog geen account? <a href="registration.php">regristreer nu!</a>.</p>
         </form>
     </div>    
 </body>
