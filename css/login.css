@@ -1,0 +1,15 @@
+/* Index.css */
+
+.pageContent{
+    height: 400vh;
+}
+
+li {
+    list-style-type:none;
+}
+
+#login {
+    width:70%;
+    margin-top:1px;
+    margin-bottom:10px;
+}

@@ -93,25 +93,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="" href="">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
+    <?php include('../inc/header.php'); ?>
+
     <div class="wrapper">
         <h2>Login</h2>
-        <p>vul uw gegevens in om in te loggen.</p>
+        <p>Vul uw gegevens in om in te loggen.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Gebruikersnaam</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                <li><label for="email"><b>Email *</b></label></li>
+                <li><input id="login" type="text" name="username" placeholder="Vul hier uw email in..." class="form-control" value="<?php echo $username; ?>"></li>
                 <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
+            </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Wachtwoord</label>
-                <input type="password" name="password" class="form-control">
+                <li><label for="wachtwoord"><b>Wachtwoord *</b></label></li>
+                <li><input id="login" type="password" name="password" placeholder="Vul hier uw wachtwoord in..." class="form-control"></li>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
@@ -119,6 +121,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Heeft u nog geen account? <a href="registration.php">regristreer nu!</a>.</p>
         </form>
-    </div>    
+    </div>
+
+    <?php include('../inc/footer.php'); ?>
 </body>
 </html>
