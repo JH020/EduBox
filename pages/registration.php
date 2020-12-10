@@ -115,6 +115,8 @@ $param_username = $username;
     //verbinding verbreken
     mysqli_close($link);      
 }
+}
+}
 ?>
 
         <meta charset="UTF-8">
