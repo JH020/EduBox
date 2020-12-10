@@ -71,10 +71,10 @@ if(!empty($email) && !empty($password)) {
         $toFind = "@";
         $result = strchr($stringA,$toFind);
         if(strpos($result, "student") === FALSE){
-            $level = "docent";
+            $role = "docent";
     }
     else {
-        $level = "student";
+        $role = "student";
     } 
 
 //valideren van accepteren wachtwoord
